@@ -19,7 +19,7 @@ namespace StudentMgmt.Pages.Students
             Student = _studentRepository.GetStudent(id);
         }
 
-        public IActionResult OnPost()
+        public IActionResult OnPost(Student Student)
         {
             Student = _studentRepository.Update(Student);
             return RedirectToPage("Index");
