@@ -5,13 +5,16 @@
 }
 <form method="POST">
     <input type="hidden" asp-for="Student.Id" />
+    <div asp-validation-summary="All" class="text-danger"></div>
     <div class="mb-3">
         <label asp-for="Student.Name" class="form-label">Name</label>
         <input type="text" class="form-control" asp-for="Student.Name">
+        <span asp-validation-for="Student.Name" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Student.Email" class="form-label">Email</label>
         <input type="email" class="form-control" asp-for="Student.Email">
+        <span asp-validation-for="Student.Email" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Student.Phone" class="form-label">Phone</label>

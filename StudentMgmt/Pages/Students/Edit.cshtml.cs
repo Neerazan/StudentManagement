@@ -21,8 +21,14 @@ namespace StudentMgmt.Pages.Students
 
         public IActionResult OnPost(Student Student)
         {
-            Student = _studentRepository.Update(Student);
-            return RedirectToPage("Index");
+            if(ModelState.IsValid)
+            {
+                Student = _studentRepository.Update(Student);
+                return RedirectToPage("Index");
+
+            }
+            return Page();
+            
         }
     }
 }
