@@ -1,8 +1,11 @@
-﻿@page "{id:int}"
+﻿@page "{id:min(1)?}"
 @model StudentMgmt.Pages.Students.EditModel
 @{
+    ViewData["Title"] = "Edit Student";
+    var pageHeader = Model.Student.Id > 0 ? "Edit" : "Create";
 
 }
+<h1>@pageHeader</h1>
 <form method="POST">
     <input type="hidden" asp-for="Student.Id" />
     <div asp-validation-summary="All" class="text-danger"></div>
